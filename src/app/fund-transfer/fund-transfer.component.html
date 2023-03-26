@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<app-side-bar></app-side-bar>
+<div class="account-detail-page main-section">
+
+<div class="user-data">
+    <div class="transfer-container">
+        <h2>Fund Transfer</h2>
+        <div class="form-group">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" [(ngModel)]="amount">
+        </div>
+        <div class="form-group">
+          <label for="fromBank">From Bank:</label>
+          <select id="fromBank" [(ngModel)]="selectedFromBank">
+            <option *ngFor="let bank of frombanks" [value]="bank">{{bank}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="toBank">To Bank:</label>
+          <select id="toBank" [(ngModel)]="selectedToBank">
+            <option *ngFor="let bank of tobanks" [value]="bank">{{bank.name}}</option>
+          </select>
+        </div>
+        <button (click)="transfer()">Transfer</button>
+      </div>
+      
+
+ 
+
+</div>

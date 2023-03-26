@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<app-side-bar></app-side-bar>
+<div class="account-detail-page main-section"><br>
+
+<h2 class="user-data">Account Transaction and historis</h2><br>
+<div class="user-data">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" [(ngModel)]="startDate" (change)="filterTable()">
+<label for="endDate">End Date:</label>
+<input type="date" id="endDate" [(ngModel)]="endDate" (change)="filterTable()">
+<button (click)="downloadCSV()" class="Download">Download CSV</button>
+<table>
+  <thead>
+    <tr>
+      <th>Serial No</th>
+      <th> Transaction Date</th>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+      
+      
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of tableData" [hidden]="!row.show">
+      <td>{{ row.Serial_no }}</td>
+      <td>{{ row.date }}</td>
+      <td>{{ row.ID }}</td>
+      <td>{{ row.amount }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+
+
+</div>

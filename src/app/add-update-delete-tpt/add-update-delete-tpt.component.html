@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<app-side-bar></app-side-bar>
+<div class="account-detail-page main-section">
+
+<div class="user-data">
+    <h1>Beneficiaries</h1>
+
+<!-- Add beneficiary form -->
+<form (ngSubmit)="addBeneficiary()" #addForm="ngForm">
+  <h2 style="background-color: rgb(178, 178, 240);">Add Beneficiary</h2>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" [(ngModel)]="newBeneficiary.name" required>
+
+  <label for="accountNumber">Account Number:</label>
+  <input type="number" id="accountNumber" name="accountNumber" [(ngModel)]="newBeneficiary.accountNumber" required>
+
+  <label for="ifsc">IFSC Code:</label>
+  <input type="text" id="ifsc" name="ifsc" [(ngModel)]="newBeneficiary.ifsc" required>
+
+  <button type="submit" [disabled]="!addForm.valid" style="background-color: rgb(252, 255, 251);">Add Beneficiary</button>
+</form>
+
+<!-- Beneficiary list -->
+<h2 style="background-color:rgb(178, 178, 240) ;">Beneficiary List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>IFSC Code</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let beneficiary of beneficiaries">
+      <td>{{ beneficiary.name }}</td>
+      <td>{{ beneficiary.accountNumber }}</td>
+      <td>{{ beneficiary.ifsc }}</td>
+      <td>
+        <button (click)="editBeneficiary(beneficiary)" style="background-color: rgb(179, 235, 235);">Edit</button>
+        <button (click)="deleteBeneficiary(beneficiary)" style="background-color: rgb(243, 174, 174);">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Edit beneficiary form -->
+<div *ngIf="showEditForm">
+  <h2>Edit Beneficiary</h2>
+  <form (ngSubmit)="updateBeneficiary()" #editForm="ngForm">
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" name="editName" [(ngModel)]="selectedBeneficiary.name" required>
+
+    <label for="editAccountNumber">Account Number:</label>
+    <input type="number" id="editAccountNumber" name="editAccountNumber" [(ngModel)]="selectedBeneficiary.accountNumber" required>
+
+    <label for="editIfsc">IFSC Code:</label>
+    <input type="text" id="editIfsc" name="editIfsc" [(ngModel)]="selectedBeneficiary.ifsc" required>
+
+    <button type="submit" [disabled]="!editForm.valid">Save</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+</div>
+
+    
+
+
+</div>

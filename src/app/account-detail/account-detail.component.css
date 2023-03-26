@@ -1,0 +1,19 @@
+.account-detail-page{
+    
+    background-color: rgb(222, 215, 215);
+}
+
+.main-section{
+    position: absolute;
+    left: 17%;
+    width: 100%;
+    top:  17%;
+    height: 600px;
+    
+}
+
+.user-data{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 14px;
+}

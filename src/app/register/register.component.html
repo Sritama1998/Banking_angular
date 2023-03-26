@@ -1,0 +1,29 @@
+<div class="container-fluid signup-wrapper bg-light py-5" >
+    <div class="container signup-inner text-light p-3" style="border-radius: 25px;">
+        <!-- <div class="card" style="border-radius: 25px;"> -->
+            <div class="card-body p-md-5">
+                <h1 class="display-4 text-dark text-center pb-3">Register Here</h1>
+                <form (ngSubmit)="userRegister()" #registerForm="ngForm">
+                    <div class="mb-2">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="bankuser.name"
+                            placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="useremail" name="userMail" [(ngModel)]="bankuser.useremail"
+                            placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="userpwd" name="password" [(ngModel)]="bankuser.userpwd"
+                            placeholder="Enter your password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" [disabled]="registerForm.form.invalid" class="btn btn-primary btn-block mb-4">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

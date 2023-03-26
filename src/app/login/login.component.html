@@ -1,0 +1,25 @@
+<div class="container-fluid signup-wrapper bg-light py-5" >
+    <div class="container signup-inner text-light p-3" style="border-radius: 25px;">
+        <!-- <div class="card" style="border-radius: 25px;"> -->
+            <div class="card-body p-md-5">
+                <h1 class="display-4 text-dark text-center pb-3">Login</h1>
+                <form #registerForm="ngForm">
+    
+                    <div class="mb-2">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="useremail" name="userMail"
+                            placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="mb-2">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="userpwd" name="password"
+                            placeholder="Enter your password" required>
+                    </div><br>
+                    <div class="text-center">
+                        <button type="submit"  class="btn btn-primary btn-block mb-4">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
